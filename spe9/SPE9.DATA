@@ -27,6 +27,9 @@ TABDIMS
 WELLDIMS
    30   10    2   30 /
 
+EQLDIMS
+ 1 1* 2 /
+
 START
    1 'JAN' 1990  /
 
@@ -2439,17 +2442,25 @@ RPTRST
 
 RPTSOL
   FIP=3 /
-INCLUDE
-'./INITSOL.INC'
-/
----EQUIL
---Datum    Press     WOC   Pcwoc  GOC   Pcgoc
----  9035.    3600.    9950.  0.0    8800.  0.0   1  /
+--INCLUDE
+--'./INITSOL.INC'
+--/
 
----PBVD
+EQUIL
+--Datum    Press     WOC   Pcwoc  GOC   Pcgoc
+  9035.    3600.    9950.  0.0    8800.  0.0   1  0 0 /
+
+--PBVD
 --Pb     Depth
----  5000.  3600.
----  9000.  3600. /
+--  5000.  3600.
+--  9000.  3600. /
+
+--manually converted from using pbvd and pvto
+RSVD
+  4000. 1.39 
+  10000. 1.39 /
+
+
 
 SUMMARY   ======================================================================
 
